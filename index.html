@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Our App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f7f9fa;
+      color: #222;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 30px;
+    }
+    h1 {
+      color: #1170ee;
+      margin-bottom: 20px;
+    }
+    a.store-link {
+      display: inline-block;
+      margin: 12px 6px;
+      padding: 10px 22px;
+      background: #1170ee;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 7px;
+      transition: background 0.2s;
+    }
+    a.store-link:hover {
+      background: #0d59c6;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    const androidUrl = "https://play.google.com/store/apps/details?id=com.unitydevelopers.ipswichtownhallxmas";
+    const iosUrl = "https://apps.apple.com/gb/app/cornhill-christmas/id1590141527";
+
+    window.onload = function() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      if (/android/i.test(ua)) {
+        window.location.href = androidUrl;
+      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location.href = iosUrl;
+      }
+      // On desktop, show manual links below.
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Redirecting to Your App Store</h1>
+    <p>If you aren't redirected automatically, choose your device:</p>
+    <a class="store-link" href="https://play.google.com/store/apps/details?id=com.unitydevelopers.ipswichtownhallxmas" target="_blank">Android</a>
+    <a class="store-link" href="https://apps.apple.com/gb/app/cornhill-christmas/id1590141527" target="_blank">iOS (Apple)</a>
+    <div class="note">
+      If you opened this on a computer, scan the QR code with your mobile device.
+    </div>
+  </div>
+</body>
+</html>
