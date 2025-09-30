@@ -44,8 +44,9 @@
     }
   </style>
   <script>
-    const androidUrl = "https://play.google.com/store/apps/details?id=com.unitydevelopers.ipswichtownhallxmas";
-    const iosUrl = "https://apps.apple.com/gb/app/cornhill-christmas/id1590141527";
+    // point to your "coming soon" pages for now
+    const androidUrl = "coming-soon-android.html";
+    const iosUrl = "coming-soon-ios.html";
 
     window.onload = function() {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -54,7 +55,7 @@
       } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
         window.location.href = iosUrl;
       }
-      // On desktop, show manual links below.
+      // On desktop, stay on this page and show manual links below
     };
   </script>
 </head>
@@ -62,8 +63,9 @@
   <div class="container">
     <h1>Redirecting to Your App Store</h1>
     <p>If you aren't redirected automatically, choose your device:</p>
-    <a class="store-link" href="https://play.google.com/store/apps/details?id=com.unitydevelopers.ipswichtownhallxmas" target="_blank">Android</a>
-    <a class="store-link" href="https://apps.apple.com/gb/app/cornhill-christmas/id1590141527" target="_blank">iOS (Apple)</a>
+    <!-- update these hrefs to match the same as above -->
+    <a class="store-link" href="coming-soon-android.html">Android</a>
+    <a class="store-link" href="coming-soon-ios.html">iOS (Apple)</a>
     <div class="note">
       If you opened this on a computer, scan the QR code with your mobile device.
     </div>
