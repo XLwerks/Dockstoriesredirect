@@ -6,11 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+      margin: 0;
       font-family: system-ui, sans-serif;
-      background: #f7f9fa;
-      color: #222;
+      background: #000;
+      color: #fff;
       text-align: center;
       padding: 50px 20px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    body.show-content {
+      background: #f7f9fa;
+      color: #222;
     }
     .container {
       max-width: 400px;
@@ -19,6 +25,10 @@
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
       padding: 30px;
+      display: none;
+    }
+    body.show-content .container {
+      display: block;
     }
     h1 {
       color: #1170ee;
@@ -52,10 +62,14 @@
       const ua = navigator.userAgent || navigator.vendor || window.opera;
       if (/android/i.test(ua)) {
         window.location.href = androidUrl;
-      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        return;
+      }
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
         window.location.href = iosUrl;
+        return;
       }
       // On desktop, stay on this page and show manual links below
+      document.body.classList.add('show-content');
     };
   </script>
 </head>
